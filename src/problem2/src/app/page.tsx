@@ -1,5 +1,6 @@
 "use client";
 
+import useSWR from "swr";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -10,7 +11,7 @@ import {
   DialogContent,
   Dialog,
 } from "@/components/ui/dialog";
-import { Avatar } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import {
   DropdownMenuTrigger,
   DropdownMenuItem,
@@ -29,8 +30,40 @@ import {
   AlertDialogContent,
   AlertDialog,
 } from "@/components/ui/alert-dialog";
+import { AlertTriangleIcon, LoaderIcon } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+  const fetcher = (url: string) => fetch(url).then((res) => res.json());
+  const { data, error } = useSWR(
+    "https://interview.switcheo.com/prices.json",
+    fetcher
+  );
+
+  useEffect(() => {
+    if (data || error) {
+      setIsLoading(false);
+    }
+  }, [data, error]);
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <AlertTriangleIcon className="text-red-500 mr-2" />
+        Failed to load token data, please try again.
+      </div>
+    );
+  }
+
+  if (!data || isLoading) {
+    return (
+      <div className="flex items-center justify-center h-96">
+        <LoaderIcon className="animate-spin w-20 h-20" />
+      </div>
+    );
+  }
+
   return (
     <main className="w-full max-w-2xl mx-auto px-4 py-8 space-y-8">
       <h1 className="text-2xl font-bold text-center">Swap Tokens</h1>
@@ -65,7 +98,7 @@ export default function Home() {
                   <DialogTrigger asChild>
                     <Button variant="outline">Select Token</Button>
                   </DialogTrigger>
-                  <DialogContent className="w-96">
+                  <DialogContent className="w-96 max-h-[75%] overflow-scroll">
                     <DialogHeader>
                       <DialogTitle>Select Token</DialogTitle>
                       <Input
@@ -94,21 +127,22 @@ export default function Home() {
                         Token B
                       </div>
                       <h3 className="font-bold mt-4">All Tokens</h3>
-                      <div>
-                        <Avatar
-                          alt="Token Logo"
-                          className="w-6 h-6 mr-2"
-                          src="/placeholder.svg?height=24&width=24"
-                        />
-                        Token C
-                      </div>
-                      <div>
-                        <Avatar
-                          alt="Token Logo"
-                          className="w-6 h-6 mr-2"
-                          src="/placeholder.svg?height=24&width=24"
-                        />
-                        Token D
+                      <div className="flex flex-col gap-y-3 py-2">
+                        {data &&
+                          data.map((token, index: number) => (
+                            <div key={index} className="flex ">
+                              <Avatar className="w-6 h-6 mr-2">
+                                <AvatarImage
+                                  src={`https://raw.githubusercontent.com/Switcheo/token-icons/main/tokens/${token.currency}.svg`}
+                                  alt={token.currency}
+                                />
+                                <AvatarFallback>?</AvatarFallback>
+                              </Avatar>
+                              <p>
+                                {token.currency}: {token.price}
+                              </p>
+                            </div>
+                          ))}
                       </div>
                     </div>
                   </DialogContent>
@@ -130,7 +164,7 @@ export default function Home() {
                   <DialogTrigger asChild>
                     <Button variant="outline">Select Token</Button>
                   </DialogTrigger>
-                  <DialogContent className="w-96">
+                  <DialogContent className="w-96 max-h-[75%] overflow-scroll">
                     <DialogHeader>
                       <DialogTitle>Select Token</DialogTitle>
                       <Input
@@ -159,21 +193,21 @@ export default function Home() {
                         Token B
                       </div>
                       <h3 className="font-bold mt-4">All Tokens</h3>
-                      <div>
-                        <Avatar
-                          alt="Token Logo"
-                          className="w-6 h-6 mr-2"
-                          src="/placeholder.svg?height=24&width=24"
-                        />
-                        Token C
-                      </div>
-                      <div>
-                        <Avatar
-                          alt="Token Logo"
-                          className="w-6 h-6 mr-2"
-                          src="/placeholder.svg?height=24&width=24"
-                        />
-                        Token D
+                      <div className="flex flex-col gap-y-3 py-2">
+                        {data.map((token, index: number) => (
+                          <div key={index} className="flex ">
+                            <Avatar className="w-6 h-6 mr-2">
+                              <AvatarImage
+                                src={`https://raw.githubusercontent.com/Switcheo/token-icons/main/tokens/${token.currency}.svg`}
+                                alt={token.currency}
+                              />
+                              <AvatarFallback>?</AvatarFallback>
+                            </Avatar>
+                            <p>
+                              {token.currency}: {token.price}
+                            </p>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </DialogContent>
