@@ -20,6 +20,7 @@ export default function Home() {
   );
   const [fromTokenValue, setFromTokenValue] = useState<string>();
   const [toTokenValue, setToTokenValue] = useState<string>();
+  const [isSwitchButton, setIsSwitchButton] = useState<boolean>(false);
 
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR(
@@ -34,20 +35,18 @@ export default function Home() {
       self.findIndex((v: Token) => v.currency === value.currency) === index
   );
 
-  const calculateFromTokenValue = (tokenValue?: number) => {
+  const calculateFromTokenValue = (toTokenValue: number) => {
     if (toTokenValue && selectedFromToken && selectedToToken) {
       const fromTokenValue =
-        (Number(toTokenValue) || 0 * selectedToToken.price) /
-        selectedFromToken.price;
+        (toTokenValue * selectedToToken.price) / selectedFromToken.price;
       setFromTokenValue(fromTokenValue.toString());
     }
   };
 
-  const calculateToTokenValue = (fromTokenValue?: number) => {
+  const calculateToTokenValue = (fromTokenValue: number) => {
     if (fromTokenValue && selectedFromToken && selectedToToken) {
       const toTokenValue =
-        ((fromTokenValue || 0) * selectedFromToken.price) /
-        selectedToToken.price;
+        (fromTokenValue * selectedFromToken.price) / selectedToToken.price;
       setToTokenValue(toTokenValue.toString());
     }
   };
@@ -61,11 +60,15 @@ export default function Home() {
   }, [data, error]);
 
   useEffect(() => {
-    calculateFromTokenValue();
+    if (!isSwitchButton) {
+      calculateFromTokenValue(Number(toTokenValue));
+    }
   }, [selectedToToken]);
 
   useEffect(() => {
-    calculateToTokenValue();
+    if (!isSwitchButton) {
+      calculateToTokenValue(Number(fromTokenValue));
+    }
   }, [selectedFromToken]);
 
   if (error) {
@@ -122,13 +125,16 @@ export default function Home() {
             <Button
               variant={"ghost"}
               onClick={() => {
+                setIsSwitchButton(true);
+
                 const tempToken = selectedFromToken;
                 setSelectedFromToken(selectedToToken);
                 setSelectedToToken(tempToken);
-
-                const tempTokenValue = fromTokenValue;
+                const tempValue = fromTokenValue;
                 setFromTokenValue(toTokenValue);
-                setToTokenValue(tempTokenValue);
+                setToTokenValue(tempValue);
+
+                setIsSwitchButton(false);
               }}
               className="flex justify-center items-center mx-auto "
             >
