@@ -144,13 +144,28 @@ export default function Home() {
                 otherSelectedToken={selectedFromToken}
                 tokenValue={toTokenValue}
                 onChange={(e) => {
-                  console.log(e.target.value);
-                  setToTokenValue(e.target.value);
-                  calculateFromTokenValue();
+                  const PATTERN = new RegExp("^[0-9]*[.,]?[0-9]*$");
+                  if (!PATTERN.test(e.target.value)) {
+                    return;
+                  }
+
+                  const value = Number(e.target.value);
+                  if (value == 0) {
+                    setFromTokenValue("0");
+                    setToTokenValue("0");
+                  } else {
+                    setToTokenValue(value.toString());
+                    calculateFromTokenValue(value);
+                  }
                 }}
               />
             </div>
-            <SwapButton />
+            <SwapButton
+              fromValue={fromTokenValue}
+              toToken={selectedToToken?.currency}
+              fromToken={selectedFromToken?.currency}
+              toValue={toTokenValue}
+            />
           </div>
         </CardContent>
       </Card>
