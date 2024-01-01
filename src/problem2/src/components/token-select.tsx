@@ -31,6 +31,21 @@ export default function TokenSelect({
   tokenValue,
   onChange,
 }: TokenSelectProps) {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredTokens = data.filter((token) =>
+    token.currency.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+  const filteredCommonTokens = data
+    .slice(-4)
+    .filter((token) =>
+      token.currency.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
+
   return (
     <div className="flex space-x-2">
       <Input
@@ -72,12 +87,14 @@ export default function TokenSelect({
               id="search-token"
               placeholder="Search"
               type="text"
+              value={searchQuery}
+              onChange={handleSearchChange}
             />
           </DialogHeader>
           <div>
             <h3 className="font-bold">Commonly Traded</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-              {data.slice(-4).map((token: Token, index: number) => (
+              {filteredCommonTokens.map((token: Token, index: number) => (
                 <DialogClose asChild key={index}>
                   <Button
                     className="flex justify-start px-2 py-1 h-fit rounded-full text-sm"
@@ -107,7 +124,7 @@ export default function TokenSelect({
 
             <h3 className="font-bold mt-4">All Tokens</h3>
             <div className="flex flex-col gap-y-3 py-2">
-              {data.map((token: Token, index: number) => (
+              {filteredTokens.map((token: Token, index: number) => (
                 <DialogClose asChild key={index}>
                   <Button
                     className="flex justify-start px-2 py-1 h-fit"

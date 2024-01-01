@@ -20,10 +20,18 @@ export default function Home() {
   );
   const [fromTokenValue, setFromTokenValue] = useState<string>();
   const [toTokenValue, setToTokenValue] = useState<string>();
+
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR(
     "https://interview.switcheo.com/prices.json",
     fetcher
+  );
+  const sortedData = data?.sort((a: Token, b: Token) =>
+    a.currency.localeCompare(b.currency)
+  );
+  const uniqueData = sortedData?.filter(
+    (value: Token, index: number, self: Token[]) =>
+      self.findIndex((v: Token) => v.currency === value.currency) === index
   );
 
   const calculateFromTokenValue = (tokenValue?: number) => {
@@ -88,7 +96,7 @@ export default function Home() {
             <div className="space-y-2">
               <Label htmlFor="from-token">From</Label>
               <TokenSelect
-                data={data}
+                data={uniqueData}
                 id="from-token"
                 selectedToken={selectedFromToken}
                 setSelectedToken={setSelectedFromToken}
@@ -129,7 +137,7 @@ export default function Home() {
             <div className="space-b-2">
               <Label htmlFor="to-token">To</Label>
               <TokenSelect
-                data={data}
+                data={uniqueData}
                 id="to-token"
                 selectedToken={selectedToToken}
                 setSelectedToken={setSelectedToToken}
