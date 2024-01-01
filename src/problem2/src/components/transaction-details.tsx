@@ -28,12 +28,12 @@ export default function TransactionDetails({
             <div className="flex justify-between gap-x-4">
               <div>Exchange Rate</div>
               {selectedFromToken && selectedToToken && (
-                <div className="text-right">
+                <p className="text-right">
                   1 {selectedFromToken?.currency} ={"  "}
                   {selectedFromToken?.price / selectedToToken?.price}
                   {"  "}
                   {selectedToToken.currency}
-                </div>
+                </p>
               )}
             </div>
           </div>

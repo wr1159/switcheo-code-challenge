@@ -42,8 +42,9 @@ export default function SwapButton(props: SwapButtonProps) {
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Confirm Swap</AlertDialogTitle>
-          <AlertDialogDescription>
-            Are you sure you want to swap{" "}
+          <AlertDialogDescription className="text-center">
+            Are you sure you want to swap
+            <br />
             <span className="font-bold text-lg text-secondary-foreground">
               <span className="font-mono">{fromValue}</span> {fromToken}
             </span>{" "}
