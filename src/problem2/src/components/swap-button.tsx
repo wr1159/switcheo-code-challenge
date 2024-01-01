@@ -30,6 +30,8 @@ export default function SwapButton(props: SwapButtonProps) {
           disabled={
             Number(fromValue) == 0 ||
             Number(toValue) == 0 ||
+            !fromValue ||
+            !toValue ||
             !fromToken ||
             !toToken
           }
