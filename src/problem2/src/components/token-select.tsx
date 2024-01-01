@@ -79,7 +79,7 @@ export default function TokenSelect({
             )}
           </Button>
         </DialogTrigger>
-        <DialogContent className="min-w-96 max-h-[75%] overflow-scroll">
+        <DialogContent className="max-w-screen md:min-w-96 md:max-w-none max-h-[75%] overflow-scroll">
           <DialogHeader>
             <DialogTitle>Select Token</DialogTitle>
             <Input

@@ -25,10 +25,10 @@ export default function TransactionDetails({
                 {fromTokenValue || 0.0} {selectedFromToken?.currency}
               </div>
             </div>
-            <div className="flex justify-between">
+            <div className="flex justify-between gap-x-4">
               <div>Exchange Rate</div>
               {selectedFromToken && selectedToToken && (
-                <div>
+                <div className="text-right">
                   1 {selectedFromToken?.currency} ={"  "}
                   {selectedFromToken?.price / selectedToToken?.price}
                   {"  "}
