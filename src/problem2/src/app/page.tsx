@@ -3,13 +3,14 @@
 import useSWR from "swr";
 import { Label } from "@/components/ui/label";
 import { CardContent, Card } from "@/components/ui/card";
-import { AlertTriangleIcon, LoaderIcon } from "lucide-react";
+import { AlertTriangleIcon, ArrowUpDownIcon, LoaderIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { SwapSettings } from "@/components/swap-settings";
 import { Token } from "@/lib/types";
 import TokenSelect from "@/components/token-select";
 import SwapButton from "@/components/swap-button";
 import TransactionDetails from "@/components/transaction-details";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState<Boolean>(true);
@@ -66,7 +67,18 @@ export default function Home() {
                 otherSelectedToken={selectedToToken}
               />
             </div>
-            <div className="space-y-2">
+            <Button
+              variant={"ghost"}
+              onClick={() => {
+                const tempToken = selectedFromToken;
+                setSelectedFromToken(selectedToToken);
+                setSelectedToToken(tempToken);
+              }}
+              className="flex justify-center items-center mx-auto "
+            >
+              <ArrowUpDownIcon />
+            </Button>
+            <div className="space-b-2">
               <Label htmlFor="to-token">To</Label>
               <TokenSelect
                 data={data}

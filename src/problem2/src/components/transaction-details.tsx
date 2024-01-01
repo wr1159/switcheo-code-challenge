@@ -32,10 +32,6 @@ export default function TransactionDetails({
                 </div>
               )}
             </div>
-            <div className="flex justify-between">
-              <div>Fees</div>
-              <div>0.0 Token A</div>
-            </div>
           </div>
         </div>
       </CardContent>
