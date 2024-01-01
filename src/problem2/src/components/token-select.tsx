@@ -76,20 +76,35 @@ export default function TokenSelect({
           </DialogHeader>
           <div>
             <h3 className="font-bold">Commonly Traded</h3>
-            <div>
-              <Avatar
-                className="w-6 h-6 mr-2"
-                src="/placeholder.svg?height=24&width=24"
-              />
-              Token A
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+              {data.slice(-4).map((token: Token, index: number) => (
+                <DialogClose asChild key={index}>
+                  <Button
+                    className="flex justify-start px-2 py-1 h-fit rounded-full text-sm"
+                    variant={"outline"}
+                    disabled={otherSelectedToken?.currency === token.currency}
+                    onClick={() => {
+                      setSelectedToken(token);
+                    }}
+                  >
+                    <Avatar className="w-6 h-6 mr-2">
+                      <AvatarImage
+                        src={`https://raw.githubusercontent.com/Switcheo/token-icons/main/tokens/${token.currency}.svg`}
+                        alt={token.currency}
+                      />
+                      <AvatarFallback>?</AvatarFallback>
+                    </Avatar>
+                    <div className="flex flex-col justify-start items-start">
+                      <span className="text-sm">{token.currency}</span>
+                      <span className="text-muted-foreground truncate text-xs">
+                        ${token.price}
+                      </span>
+                    </div>
+                  </Button>
+                </DialogClose>
+              ))}
             </div>
-            <div>
-              <Avatar
-                className="w-6 h-6 mr-2"
-                src="/placeholder.svg?height=24&width=24"
-              />
-              Token B
-            </div>
+
             <h3 className="font-bold mt-4">All Tokens</h3>
             <div className="flex flex-col gap-y-3 py-2">
               {data.map((token: Token, index: number) => (
