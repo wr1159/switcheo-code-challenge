@@ -18,6 +18,8 @@ interface TokenSelectProps {
   selectedToken: Token | null;
   otherSelectedToken: Token | null;
   setSelectedToken: (token: Token | null) => void;
+  tokenValue: string | undefined;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function TokenSelect({
@@ -26,16 +28,22 @@ export default function TokenSelect({
   otherSelectedToken,
   setSelectedToken,
   id,
+  tokenValue,
+  onChange,
 }: TokenSelectProps) {
   return (
     <div className="flex space-x-2">
       <Input
         className="flex-grow"
         id={id}
-        type="number"
+        type="text"
+        autoComplete="off"
+        autoCorrect="off"
         placeholder="0.0"
         inputMode="decimal"
         pattern="^[0-9]*[.,]?[0-9]*$"
+        value={tokenValue || undefined}
+        onChange={onChange}
       />
       <Dialog>
         <DialogTrigger asChild>
@@ -56,7 +64,7 @@ export default function TokenSelect({
             )}
           </Button>
         </DialogTrigger>
-        <DialogContent className="w-96 max-h-[75%] overflow-scroll">
+        <DialogContent className="min-w-96 max-h-[75%] overflow-scroll">
           <DialogHeader>
             <DialogTitle>Select Token</DialogTitle>
             <Input
@@ -85,11 +93,10 @@ export default function TokenSelect({
             <h3 className="font-bold mt-4">All Tokens</h3>
             <div className="flex flex-col gap-y-3 py-2">
               {data.map((token: Token, index: number) => (
-                <DialogClose asChild>
+                <DialogClose asChild key={index}>
                   <Button
                     className="flex justify-start px-2 py-1 h-fit"
                     variant={"outline"}
-                    key={index}
                     disabled={otherSelectedToken?.currency === token.currency}
                     onClick={() => {
                       setSelectedToken(token);

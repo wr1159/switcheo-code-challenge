@@ -5,11 +5,13 @@ import { Card, CardContent } from "./ui/card";
 interface TransactionDetailsProps {
   selectedFromToken: Token | null;
   selectedToToken: Token | null;
+  fromTokenValue: string | undefined;
 }
 
 export default function TransactionDetails({
   selectedFromToken,
   selectedToToken,
+  fromTokenValue,
 }: TransactionDetailsProps) {
   return (
     <Card>
@@ -19,7 +21,9 @@ export default function TransactionDetails({
           <div className="space-y-2">
             <div className="flex justify-between">
               <div>Amount</div>
-              <div>0.0 {selectedFromToken?.currency}</div>
+              <div>
+                {fromTokenValue || 0.0} {selectedFromToken?.currency}
+              </div>
             </div>
             <div className="flex justify-between">
               <div>Exchange Rate</div>

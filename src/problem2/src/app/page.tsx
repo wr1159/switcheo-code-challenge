@@ -18,11 +18,31 @@ export default function Home() {
   const [selectedFromToken, setSelectedFromToken] = useState<Token | null>(
     null
   );
+  const [fromTokenValue, setFromTokenValue] = useState<string>();
+  const [toTokenValue, setToTokenValue] = useState<string>();
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR(
     "https://interview.switcheo.com/prices.json",
     fetcher
   );
+
+  const calculateFromTokenValue = (tokenValue?: number) => {
+    if (toTokenValue && selectedFromToken && selectedToToken) {
+      const fromTokenValue =
+        (Number(toTokenValue) || 0 * selectedToToken.price) /
+        selectedFromToken.price;
+      setFromTokenValue(fromTokenValue.toString());
+    }
+  };
+
+  const calculateToTokenValue = (fromTokenValue?: number) => {
+    if (fromTokenValue && selectedFromToken && selectedToToken) {
+      const toTokenValue =
+        ((fromTokenValue || 0) * selectedFromToken.price) /
+        selectedToToken.price;
+      setToTokenValue(toTokenValue.toString());
+    }
+  };
 
   useEffect(() => {
     if (data || error) {
@@ -31,6 +51,14 @@ export default function Home() {
       setSelectedToToken(data[1]);
     }
   }, [data, error]);
+
+  useEffect(() => {
+    calculateFromTokenValue();
+  }, [selectedToToken]);
+
+  useEffect(() => {
+    calculateToTokenValue();
+  }, [selectedFromToken]);
 
   if (error) {
     return (
@@ -65,6 +93,22 @@ export default function Home() {
                 selectedToken={selectedFromToken}
                 setSelectedToken={setSelectedFromToken}
                 otherSelectedToken={selectedToToken}
+                tokenValue={fromTokenValue}
+                onChange={(e) => {
+                  const PATTERN = new RegExp("^[0-9]*[.,]?[0-9]*$");
+                  if (!PATTERN.test(e.target.value)) {
+                    return;
+                  }
+
+                  const value = Number(e.target.value);
+                  if (value == 0) {
+                    setFromTokenValue("0");
+                    setToTokenValue("0");
+                  } else {
+                    setFromTokenValue(value.toString());
+                    calculateToTokenValue(value);
+                  }
+                }}
               />
             </div>
             <Button
@@ -73,6 +117,10 @@ export default function Home() {
                 const tempToken = selectedFromToken;
                 setSelectedFromToken(selectedToToken);
                 setSelectedToToken(tempToken);
+
+                const tempTokenValue = fromTokenValue;
+                setFromTokenValue(toTokenValue);
+                setToTokenValue(tempTokenValue);
               }}
               className="flex justify-center items-center mx-auto "
             >
@@ -86,6 +134,12 @@ export default function Home() {
                 selectedToken={selectedToToken}
                 setSelectedToken={setSelectedToToken}
                 otherSelectedToken={selectedFromToken}
+                tokenValue={toTokenValue}
+                onChange={(e) => {
+                  console.log(e.target.value);
+                  setToTokenValue(e.target.value);
+                  calculateFromTokenValue();
+                }}
               />
             </div>
             <SwapButton />
@@ -95,6 +149,7 @@ export default function Home() {
       <TransactionDetails
         selectedFromToken={selectedFromToken}
         selectedToToken={selectedToToken}
+        fromTokenValue={fromTokenValue}
       />
     </main>
   );
