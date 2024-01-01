@@ -1,3 +1,5 @@
+"use client";
+
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -52,10 +54,12 @@ export default function Home() {
               <Label htmlFor="from-token">From</Label>
               <div className="flex space-x-2">
                 <Input
-                  className="flex-grow"
+                  className="flex-grow webkit"
                   id="from-token"
-                  placeholder="0.0"
                   type="number"
+                  placeholder="0.0"
+                  inputMode="decimal"
+                  pattern="^[0-9]*[.,]?[0-9]*$"
                 />
                 <Dialog>
                   <DialogTrigger asChild>
@@ -115,10 +119,12 @@ export default function Home() {
               <Label htmlFor="to-token">To</Label>
               <div className="flex space-x-2">
                 <Input
-                  className="flex-grow"
+                  className="flex-grow webkit"
                   id="to-token"
-                  placeholder="0.0"
                   type="number"
+                  placeholder="0.0"
+                  inputMode="decimal"
+                  pattern="^[0-9]*[.,]?[0-9]*$"
                 />
                 <Dialog>
                   <DialogTrigger asChild>
