@@ -10,6 +10,7 @@ import {
   DialogHeader,
   DialogContent,
   Dialog,
+  DialogClose,
 } from "@/components/ui/dialog";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import {
@@ -33,8 +34,18 @@ import {
 import { AlertTriangleIcon, LoaderIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
+type Token = {
+  currency: string;
+  date: string;
+  price: number;
+};
+
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<Boolean>(true);
+  const [selectedToToken, setSelectedToToken] = useState<Token | null>(null);
+  const [selectedFromToken, setSelectedFromToken] = useState<Token | null>(
+    null
+  );
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR(
     "https://interview.switcheo.com/prices.json",
@@ -44,6 +55,8 @@ export default function Home() {
   useEffect(() => {
     if (data || error) {
       setIsLoading(false);
+      setSelectedFromToken(data[0]);
+      setSelectedToToken(data[1]);
     }
   }, [data, error]);
 
@@ -87,7 +100,7 @@ export default function Home() {
               <Label htmlFor="from-token">From</Label>
               <div className="flex space-x-2">
                 <Input
-                  className="flex-grow webkit"
+                  className="flex-grow"
                   id="from-token"
                   type="number"
                   placeholder="0.0"
@@ -96,7 +109,22 @@ export default function Home() {
                 />
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button variant="outline">Select Token</Button>
+                    <Button variant="outline">
+                      {selectedFromToken ? (
+                        <>
+                          <Avatar className="w-6 h-6 mr-2">
+                            <AvatarImage
+                              src={`https://raw.githubusercontent.com/Switcheo/token-icons/main/tokens/${selectedFromToken.currency}.svg`}
+                              alt={selectedFromToken.currency}
+                            />
+                            <AvatarFallback>?</AvatarFallback>
+                          </Avatar>
+                          {selectedFromToken.currency}
+                        </>
+                      ) : (
+                        "Select Token"
+                      )}
+                    </Button>
                   </DialogTrigger>
                   <DialogContent className="w-96 max-h-[75%] overflow-scroll">
                     <DialogHeader>
@@ -128,21 +156,37 @@ export default function Home() {
                       </div>
                       <h3 className="font-bold mt-4">All Tokens</h3>
                       <div className="flex flex-col gap-y-3 py-2">
-                        {data &&
-                          data.map((token, index: number) => (
-                            <div key={index} className="flex ">
-                              <Avatar className="w-6 h-6 mr-2">
+                        {data.map((token: Token, index: number) => (
+                          <DialogClose asChild>
+                            <Button
+                              className="flex justify-start px-2 py-1 h-fit"
+                              variant={"outline"}
+                              key={index}
+                              disabled={
+                                selectedToToken?.currency === token.currency
+                              }
+                              onClick={() => {
+                                setSelectedFromToken(token);
+                              }}
+                            >
+                              <Avatar className="w-8 h-8 mr-2">
                                 <AvatarImage
                                   src={`https://raw.githubusercontent.com/Switcheo/token-icons/main/tokens/${token.currency}.svg`}
                                   alt={token.currency}
                                 />
                                 <AvatarFallback>?</AvatarFallback>
                               </Avatar>
-                              <p>
-                                {token.currency}: {token.price}
-                              </p>
-                            </div>
-                          ))}
+                              <div className="flex flex-col justify-start items-start">
+                                <span className="text-base">
+                                  {token.currency}
+                                </span>
+                                <span className="text-muted-foreground">
+                                  ${token.price}
+                                </span>
+                              </div>
+                            </Button>
+                          </DialogClose>
+                        ))}
                       </div>
                     </div>
                   </DialogContent>
@@ -153,7 +197,7 @@ export default function Home() {
               <Label htmlFor="to-token">To</Label>
               <div className="flex space-x-2">
                 <Input
-                  className="flex-grow webkit"
+                  className="flex-grow"
                   id="to-token"
                   type="number"
                   placeholder="0.0"
@@ -162,7 +206,22 @@ export default function Home() {
                 />
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button variant="outline">Select Token</Button>
+                    <Button variant="outline">
+                      {selectedToToken ? (
+                        <>
+                          <Avatar className="w-6 h-6 mr-2">
+                            <AvatarImage
+                              src={`https://raw.githubusercontent.com/Switcheo/token-icons/main/tokens/${selectedToToken.currency}.svg`}
+                              alt={selectedToToken.currency}
+                            />
+                            <AvatarFallback>?</AvatarFallback>
+                          </Avatar>
+                          {selectedToToken.currency}
+                        </>
+                      ) : (
+                        "Select Token"
+                      )}
+                    </Button>
                   </DialogTrigger>
                   <DialogContent className="w-96 max-h-[75%] overflow-scroll">
                     <DialogHeader>
@@ -194,19 +253,36 @@ export default function Home() {
                       </div>
                       <h3 className="font-bold mt-4">All Tokens</h3>
                       <div className="flex flex-col gap-y-3 py-2">
-                        {data.map((token, index: number) => (
-                          <div key={index} className="flex ">
-                            <Avatar className="w-6 h-6 mr-2">
-                              <AvatarImage
-                                src={`https://raw.githubusercontent.com/Switcheo/token-icons/main/tokens/${token.currency}.svg`}
-                                alt={token.currency}
-                              />
-                              <AvatarFallback>?</AvatarFallback>
-                            </Avatar>
-                            <p>
-                              {token.currency}: {token.price}
-                            </p>
-                          </div>
+                        {data.map((token: Token, index: number) => (
+                          <DialogClose asChild>
+                            <Button
+                              className="flex justify-start px-2 py-1 h-fit"
+                              variant={"outline"}
+                              key={index}
+                              disabled={
+                                selectedFromToken?.currency === token.currency
+                              }
+                              onClick={() => {
+                                setSelectedToToken(token);
+                              }}
+                            >
+                              <Avatar className="w-8 h-8 mr-2">
+                                <AvatarImage
+                                  src={`https://raw.githubusercontent.com/Switcheo/token-icons/main/tokens/${token.currency}.svg`}
+                                  alt={token.currency}
+                                />
+                                <AvatarFallback>?</AvatarFallback>
+                              </Avatar>
+                              <div className="flex flex-col justify-start items-start">
+                                <span className="text-base">
+                                  {token.currency}
+                                </span>
+                                <span className="text-muted-foreground">
+                                  ${token.price}
+                                </span>
+                              </div>
+                            </Button>
+                          </DialogClose>
                         ))}
                       </div>
                     </div>
@@ -243,11 +319,18 @@ export default function Home() {
             <div className="space-y-2">
               <div className="flex justify-between">
                 <div>Amount</div>
-                <div>0.0 Token A</div>
+                <div>0.0 {selectedFromToken?.currency}</div>
               </div>
               <div className="flex justify-between">
                 <div>Exchange Rate</div>
-                <div>1 Token A = 0.0 Token C</div>
+                {selectedFromToken && selectedToToken && (
+                  <div>
+                    1 {selectedFromToken?.currency} ={"  "}
+                    {selectedFromToken?.price / selectedToToken?.price}
+                    {"  "}
+                    {selectedToToken.currency}
+                  </div>
+                )}
               </div>
               <div className="flex justify-between">
                 <div>Fees</div>
