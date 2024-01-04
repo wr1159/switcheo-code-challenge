@@ -1,0 +1,12 @@
+syntax = "proto3";
+package tasks.tasks;
+
+option go_package = "tasks/x/tasks/types";
+
+message Task {
+  uint64 id = 1;
+  string title = 2; 
+  string description = 3; 
+  bool completed = 4; 
+  string creator = 5;
+}
