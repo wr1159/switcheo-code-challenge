@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	cmtcfg "github.com/cometbft/cometbft/config"
 	serverconfig "github.com/cosmos/cosmos-sdk/server/config"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	cmtcfg "github.com/wr1159/faulty-cometbft/config"
 
 	"tasks/app"
 )
