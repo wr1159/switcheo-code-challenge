@@ -6,8 +6,8 @@ import "amino/amino.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
-import "tasks/tasks/params.proto";
 import "tasks/tasks/task.proto";
+import "tasks/tasks/params.proto"; // Import the "Params" message from the "params.proto" file.
 
 option go_package = "tasks/x/tasks/types";
 
@@ -18,13 +18,13 @@ service Query {
   rpc Params (QueryParamsRequest) returns (QueryParamsResponse) {
     option (google.api.http).get = "/tasks/tasks/params";
   
-  }
+  };
   
   // Queries a list of Task items.
   rpc Task    (QueryGetTaskRequest) returns (QueryGetTaskResponse) {
     option (google.api.http).get = "/tasks/tasks/task/{id}";
   
-  }
+  };
   rpc TaskAll (QueryAllTaskRequest) returns (QueryAllTaskResponse) {
     option (google.api.http).get = "/tasks/tasks/task";
   
@@ -54,7 +54,7 @@ message QueryAllTaskRequest {
 }
 
 message QueryAllTaskResponse {
-  repeated Task                                   Task       = 1 [(gogoproto.nullable) = false];
+  repeated Task Task = 1 [(gogoproto.nullable) = false];
   cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }
 

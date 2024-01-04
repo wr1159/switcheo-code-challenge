@@ -20,7 +20,7 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 				{
 					RpcMethod:      "TaskAll",
 					Use:            "list-task",
-					Short:          "List all task",
+					Short:          "List all task with a filters arg, add \"\" for blank",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "filters"}},
 				},
 				{

@@ -1,8 +1,8 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
   title: HTTP API Console
-  name: ""
-  description: ""
+  name: ''
+  description: ''
 paths:
   /cosmos.auth.v1beta1.Msg/UpdateParams:
     post:
@@ -11,10 +11,10 @@ paths:
         module
 
         parameters. The authority defaults to the x/gov module account.
-      description: "Since: cosmos-sdk 0.47"
+      description: 'Since: cosmos-sdk 0.47'
       operationId: CosmosAuthV1Beta1Msg_UpdateParams
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -41,7 +41,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -265,7 +265,7 @@ paths:
         one signer corresponding to the granter of the authorization.
       operationId: CosmosAuthzV1Beta1Msg_Exec
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -291,7 +291,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -481,7 +481,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -678,7 +678,7 @@ paths:
         will be overwritten.
       operationId: CosmosAuthzV1Beta1Msg_Grant
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -698,7 +698,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -892,7 +892,7 @@ paths:
                   authorization:
                     type: object
                     properties:
-                      "@type":
+                      '@type':
                         type: string
                         description: >-
                           A URL/resource name that uniquely identifies the type
@@ -1094,7 +1094,7 @@ paths:
         granter's account that has been granted to the grantee.
       operationId: CosmosAuthzV1Beta1Msg_Revoke
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -1114,7 +1114,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -1318,7 +1318,7 @@ paths:
         accounts.
       operationId: CosmosBankV1Beta1Msg_MultiSend
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -1338,7 +1338,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -1420,7 +1420,7 @@ paths:
         account.
       operationId: CosmosBankV1Beta1Msg_Send
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -1440,7 +1440,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -1490,10 +1490,10 @@ paths:
         included. Entries that already exist in the store, but that aren't
 
         included in this message, will be left unchanged.
-      description: "Since: cosmos-sdk 0.47"
+      description: 'Since: cosmos-sdk 0.47'
       operationId: CosmosBankV1Beta1Msg_SetSendEnabled
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -1518,7 +1518,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -1585,10 +1585,10 @@ paths:
         module parameters.
 
         The authority is defined in the keeper.
-      description: "Since: cosmos-sdk 0.47"
+      description: 'Since: cosmos-sdk 0.47'
       operationId: CosmosBankV1Beta1Msg_UpdateParams
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -1615,7 +1615,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -1680,7 +1680,7 @@ paths:
       summary: Config queries for the operator configuration.
       operationId: CosmosBaseNodeV1Beta1Service_Config
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -1710,7 +1710,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       tags:
@@ -1720,7 +1720,7 @@ paths:
       summary: Status queries for the node status.
       operationId: CosmosBaseNodeV1Beta1Service_Status
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -1763,7 +1763,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       tags:
@@ -1775,10 +1775,10 @@ paths:
         module parameters.
 
         The authority is defined in the keeper.
-      description: "Since: cosmos-sdk 0.47"
+      description: 'Since: cosmos-sdk 0.47'
       operationId: CosmosConsensusV1Msg_UpdateParams
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -1802,7 +1802,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -1895,7 +1895,7 @@ paths:
 
                   NOTE: uses ABCI pubkey naming, not Amino names.
               abci:
-                title: "Since: cosmos-sdk 0.50"
+                title: 'Since: cosmos-sdk 0.50'
                 type: object
                 properties:
                   vote_extensions_enable_height:
@@ -1938,10 +1938,10 @@ paths:
         module
 
         parameters. The authority is defined in the keeper.
-      description: "Since: cosmos-sdk 0.47"
+      description: 'Since: cosmos-sdk 0.47'
       operationId: CosmosCrisisV1Beta1Msg_UpdateParams
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -1968,7 +1968,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -2006,7 +2006,7 @@ paths:
       summary: VerifyInvariant defines a method to verify a particular invariant.
       operationId: CosmosCrisisV1Beta1Msg_VerifyInvariant
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -2028,7 +2028,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -2069,10 +2069,10 @@ paths:
         could be the governance module itself. The authority is defined in the
 
         keeper.
-      description: "Since: cosmos-sdk 0.47"
+      description: 'Since: cosmos-sdk 0.47'
       operationId: CosmosDistributionV1Beta1Msg_CommunityPoolSpend
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -2096,7 +2096,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -2161,10 +2161,10 @@ paths:
         rewards
 
         to delegators to a specific validator.
-      description: "Since: cosmos-sdk 0.50"
+      description: 'Since: cosmos-sdk 0.50'
       operationId: CosmosDistributionV1Beta1Msg_DepositValidatorRewardsPool
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -2191,7 +2191,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -2244,7 +2244,7 @@ paths:
         fund the community pool.
       operationId: CosmosDistributionV1Beta1Msg_FundCommunityPool
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -2266,7 +2266,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -2310,7 +2310,7 @@ paths:
         for a delegator (or validator self-delegation).
       operationId: CosmosDistributionV1Beta1Msg_SetWithdrawAddress
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -2334,7 +2334,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -2363,10 +2363,10 @@ paths:
         x/distribution
 
         module parameters. The authority is defined in the keeper.
-      description: "Since: cosmos-sdk 0.47"
+      description: 'Since: cosmos-sdk 0.47'
       operationId: CosmosDistributionV1Beta1Msg_UpdateParams
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -2393,7 +2393,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -2452,7 +2452,7 @@ paths:
         from a single validator.
       operationId: CosmosDistributionV1Beta1Msg_WithdrawDelegatorReward
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -2474,7 +2474,7 @@ paths:
                     method
 
                     signatures required by gogoproto.
-                title: "Since: cosmos-sdk 0.46"
+                title: 'Since: cosmos-sdk 0.46'
             description: >-
               MsgWithdrawDelegatorRewardResponse defines the
               Msg/WithdrawDelegatorReward
@@ -2495,7 +2495,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -2528,7 +2528,7 @@ paths:
         full commission to the validator address.
       operationId: CosmosDistributionV1Beta1Msg_WithdrawValidatorCommission
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -2550,7 +2550,7 @@ paths:
                     method
 
                     signatures required by gogoproto.
-                title: "Since: cosmos-sdk 0.46"
+                title: 'Since: cosmos-sdk 0.46'
             description: |-
               MsgWithdrawValidatorCommissionResponse defines the
               Msg/WithdrawValidatorCommission response type.
@@ -2569,7 +2569,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -2602,7 +2602,7 @@ paths:
         counterfactual signing.
       operationId: CosmosEvidenceV1Beta1Msg_SubmitEvidence
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -2629,7 +2629,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -2821,7 +2821,7 @@ paths:
                 description: evidence defines the evidence of misbehavior.
                 type: object
                 properties:
-                  "@type":
+                  '@type':
                     type: string
                     description: >-
                       A URL/resource name that uniquely identifies the type of
@@ -2894,7 +2894,7 @@ paths:
         account with the provided expiration time.
       operationId: CosmosFeegrantV1Beta1Msg_GrantAllowance
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -2916,7 +2916,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -3116,7 +3116,7 @@ paths:
                   allowance.
                 type: object
                 properties:
-                  "@type":
+                  '@type':
                     type: string
                     description: >-
                       A URL/resource name that uniquely identifies the type of
@@ -3189,7 +3189,7 @@ paths:
       description: Since cosmos-sdk 0.50
       operationId: CosmosFeegrantV1Beta1Msg_PruneAllowances
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -3214,7 +3214,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -3413,7 +3413,7 @@ paths:
         has been granted to the grantee.
       operationId: CosmosFeegrantV1Beta1Msg_RevokeAllowance
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -3435,7 +3435,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -3635,10 +3635,10 @@ paths:
   /cosmos.gov.v1.Msg/CancelProposal:
     post:
       summary: CancelProposal defines a method to cancel governance proposal
-      description: "Since: cosmos-sdk 0.50"
+      description: 'Since: cosmos-sdk 0.50'
       operationId: CosmosGovV1Msg_CancelProposal
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -3680,7 +3680,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -3881,7 +3881,7 @@ paths:
       summary: Deposit defines a method to add deposit on a specific proposal.
       operationId: CosmosGovV1Msg_Deposit
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -3901,7 +3901,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -4120,7 +4120,7 @@ paths:
         to execute a legacy content-based proposal.
       operationId: CosmosGovV1Msg_ExecLegacyContent
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -4142,7 +4142,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -4330,7 +4330,7 @@ paths:
                 description: content is the proposal's content.
                 type: object
                 properties:
-                  "@type":
+                  '@type':
                     type: string
                     description: >-
                       A URL/resource name that uniquely identifies the type of
@@ -4406,7 +4406,7 @@ paths:
         messages.
       operationId: CosmosGovV1Msg_SubmitProposal
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -4433,7 +4433,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -4622,7 +4622,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -4831,11 +4831,11 @@ paths:
                   Since: cosmos-sdk 0.47
               summary:
                 type: string
-                description: "Since: cosmos-sdk 0.47"
+                description: 'Since: cosmos-sdk 0.47'
                 title: summary is the summary of the proposal
               expedited:
                 type: boolean
-                description: "Since: cosmos-sdk 0.50"
+                description: 'Since: cosmos-sdk 0.50'
                 title: expedited defines if the proposal is expedited or not
             description: >-
               MsgSubmitProposal defines an sdk.Msg type that supports submitting
@@ -4851,10 +4851,10 @@ paths:
         module
 
         parameters. The authority is defined in the keeper.
-      description: "Since: cosmos-sdk 0.47"
+      description: 'Since: cosmos-sdk 0.47'
       operationId: CosmosGovV1Msg_UpdateParams
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -4881,7 +4881,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -5212,7 +5212,7 @@ paths:
       summary: Vote defines a method to add a vote on a specific proposal.
       operationId: CosmosGovV1Msg_Vote
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -5232,7 +5232,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -5442,7 +5442,7 @@ paths:
         proposal.
       operationId: CosmosGovV1Msg_VoteWeighted
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -5464,7 +5464,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -5688,7 +5688,7 @@ paths:
       summary: Deposit defines a method to add deposit on a specific proposal.
       operationId: CosmosGovV1Beta1Msg_Deposit
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -5708,7 +5708,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -5925,7 +5925,7 @@ paths:
       summary: SubmitProposal defines a method to create new proposal given a content.
       operationId: CosmosGovV1Beta1Msg_SubmitProposal
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -5952,7 +5952,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -6140,7 +6140,7 @@ paths:
                 description: content is the proposal's content.
                 type: object
                 properties:
-                  "@type":
+                  '@type':
                     type: string
                     description: >-
                       A URL/resource name that uniquely identifies the type of
@@ -6233,7 +6233,7 @@ paths:
       summary: Vote defines a method to add a vote on a specific proposal.
       operationId: CosmosGovV1Beta1Msg_Vote
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -6253,7 +6253,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -6458,10 +6458,10 @@ paths:
       summary: >-
         VoteWeighted defines a method to add a weighted vote on a specific
         proposal.
-      description: "Since: cosmos-sdk 0.43"
+      description: 'Since: cosmos-sdk 0.43'
       operationId: CosmosGovV1Beta1Msg_VoteWeighted
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -6486,7 +6486,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -6716,10 +6716,10 @@ paths:
         module
 
         parameters. The authority is defaults to the x/gov module account.
-      description: "Since: cosmos-sdk 0.47"
+      description: 'Since: cosmos-sdk 0.47'
       operationId: CosmosMintV1Beta1Msg_UpdateParams
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -6746,7 +6746,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -6804,7 +6804,7 @@ paths:
         key.
       operationId: CosmosParamsV1Beta1Query_Params
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -6837,7 +6837,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -6858,10 +6858,10 @@ paths:
       summary: >-
         Subspaces queries for all registered subspaces and all keys for a
         subspace.
-      description: "Since: cosmos-sdk 0.46"
+      description: 'Since: cosmos-sdk 0.46'
       operationId: CosmosParamsV1Beta1Query_Subspaces
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -6908,7 +6908,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       tags:
@@ -6924,7 +6924,7 @@ paths:
         and rewards again.
       operationId: CosmosSlashingV1Beta1Msg_Unjail
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -6944,7 +6944,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -6966,10 +6966,10 @@ paths:
         module
 
         parameters. The authority defaults to the x/gov module account.
-      description: "Since: cosmos-sdk 0.47"
+      description: 'Since: cosmos-sdk 0.47'
       operationId: CosmosSlashingV1Beta1Msg_UpdateParams
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -6996,7 +6996,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -7051,7 +7051,7 @@ paths:
         validator.
       operationId: CosmosStakingV1Beta1Msg_BeginRedelegate
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -7077,7 +7077,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -7298,14 +7298,14 @@ paths:
         unbonding delegation
 
         and delegate back to previous validator.
-      description: "Since: cosmos-sdk 0.46"
+      description: 'Since: cosmos-sdk 0.46'
       operationId: CosmosStakingV1Beta1Msg_CancelUnbondingDelegation
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
-            description: "Since: cosmos-sdk 0.46"
+            description: 'Since: cosmos-sdk 0.46'
             title: MsgCancelUnbondingDelegationResponse
         default:
           description: An unexpected error response.
@@ -7322,7 +7322,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -7496,7 +7496,7 @@ paths:
                         }
       parameters:
         - name: body
-          description: "Since: cosmos-sdk 0.46"
+          description: 'Since: cosmos-sdk 0.46'
           in: body
           required: true
           schema:
@@ -7528,7 +7528,7 @@ paths:
                 type: string
                 format: int64
                 description: creation_height is the height which the unbonding took place.
-            description: "Since: cosmos-sdk 0.46"
+            description: 'Since: cosmos-sdk 0.46'
             title: >-
               MsgCancelUnbondingDelegation defines the SDK message for
               performing a cancel unbonding delegation for delegator
@@ -7539,7 +7539,7 @@ paths:
       summary: CreateValidator defines a method for creating a new validator.
       operationId: CosmosStakingV1Beta1Msg_CreateValidator
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -7561,7 +7561,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -7806,7 +7806,7 @@ paths:
               pubkey:
                 type: object
                 properties:
-                  "@type":
+                  '@type':
                     type: string
                     description: >-
                       A URL/resource name that uniquely identifies the type of
@@ -8001,7 +8001,7 @@ paths:
         from a delegator to a validator.
       operationId: CosmosStakingV1Beta1Msg_Delegate
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -8021,7 +8021,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -8236,7 +8236,7 @@ paths:
       summary: EditValidator defines a method for editing an existing validator.
       operationId: CosmosStakingV1Beta1Msg_EditValidator
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -8258,7 +8258,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -8491,7 +8491,7 @@ paths:
         delegate and a validator.
       operationId: CosmosStakingV1Beta1Msg_Undelegate
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -8531,7 +8531,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -8749,7 +8749,7 @@ paths:
         Since: cosmos-sdk 0.47
       operationId: CosmosStakingV1Beta1Msg_UpdateParams
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -8776,7 +8776,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -9020,7 +9020,7 @@ paths:
         initiates the lifecycle of the incentivized packet
       operationId: IbcApplicationsFeeV1Msg_PayPacketFee
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -9042,7 +9042,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -9316,7 +9316,7 @@ paths:
         sequence)
       operationId: IbcApplicationsFeeV1Msg_PayPacketFeeAsync
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -9338,7 +9338,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -9635,7 +9635,7 @@ paths:
         counterparty payee address is always used.
       operationId: IbcApplicationsFeeV1Msg_RegisterCounterpartyPayee
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -9657,7 +9657,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -9871,7 +9871,7 @@ paths:
         always used.
       operationId: IbcApplicationsFeeV1Msg_RegisterPayee
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -9893,7 +9893,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -10097,7 +10097,7 @@ paths:
       operationId: >-
         IbcApplicationsInterchainAccountsControllerV1Msg_RegisterInterchainAccount
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -10124,7 +10124,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -10319,7 +10319,7 @@ paths:
       summary: SendTx defines a rpc handler for MsgSendTx.
       operationId: IbcApplicationsInterchainAccountsControllerV1Msg_SendTx
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -10343,7 +10343,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -10567,7 +10567,7 @@ paths:
       summary: UpdateParams defines a rpc handler for MsgUpdateParams.
       operationId: IbcApplicationsInterchainAccountsControllerV1Msg_UpdateParams
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -10587,7 +10587,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -10791,7 +10791,7 @@ paths:
       summary: UpdateParams defines a rpc handler for MsgUpdateParams.
       operationId: IbcApplicationsInterchainAccountsHostV1Msg_UpdateParams
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -10811,7 +10811,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -10851,7 +10851,7 @@ paths:
       summary: Transfer defines a rpc handler method for MsgTransfer.
       operationId: IbcApplicationsTransferV1Msg_Transfer
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -10876,7 +10876,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -11127,7 +11127,7 @@ paths:
       summary: UpdateParams defines a rpc handler for MsgUpdateParams.
       operationId: IbcApplicationsTransferV1Msg_UpdateParams
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -11151,7 +11151,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -11363,7 +11363,7 @@ paths:
       summary: Acknowledgement defines a rpc handler method for MsgAcknowledgement.
       operationId: IbcCoreChannelV1Msg_Acknowledgement
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -11401,7 +11401,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -11703,7 +11703,7 @@ paths:
         MsgChannelCloseConfirm.
       operationId: IbcCoreChannelV1Msg_ChannelCloseConfirm
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -11727,7 +11727,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -11963,7 +11963,7 @@ paths:
       summary: ChannelCloseInit defines a rpc handler method for MsgChannelCloseInit.
       operationId: IbcCoreChannelV1Msg_ChannelCloseInit
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -11985,7 +11985,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -12183,7 +12183,7 @@ paths:
       summary: ChannelOpenAck defines a rpc handler method for MsgChannelOpenAck.
       operationId: IbcCoreChannelV1Msg_ChannelOpenAck
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -12205,7 +12205,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -12451,7 +12451,7 @@ paths:
         MsgChannelOpenConfirm.
       operationId: IbcCoreChannelV1Msg_ChannelOpenConfirm
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -12475,7 +12475,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -12713,7 +12713,7 @@ paths:
       summary: ChannelOpenInit defines a rpc handler method for MsgChannelOpenInit.
       operationId: IbcCoreChannelV1Msg_ChannelOpenInit
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -12740,7 +12740,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -13013,7 +13013,7 @@ paths:
       summary: ChannelOpenTry defines a rpc handler method for MsgChannelOpenTry.
       operationId: IbcCoreChannelV1Msg_ChannelOpenTry
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -13040,7 +13040,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -13364,7 +13364,7 @@ paths:
       summary: RecvPacket defines a rpc handler method for MsgRecvPacket.
       operationId: IbcCoreChannelV1Msg_RecvPacket
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -13400,7 +13400,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -13697,7 +13697,7 @@ paths:
       summary: Timeout defines a rpc handler method for MsgTimeout.
       operationId: IbcCoreChannelV1Msg_Timeout
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -13733,7 +13733,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -14033,7 +14033,7 @@ paths:
       summary: TimeoutOnClose defines a rpc handler method for MsgTimeoutOnClose.
       operationId: IbcCoreChannelV1Msg_TimeoutOnClose
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -14071,7 +14071,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -14379,7 +14379,7 @@ paths:
       summary: CreateClient defines a rpc handler method for MsgCreateClient.
       operationId: IbcCoreClientV1Msg_CreateClient
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -14401,7 +14401,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -14584,7 +14584,7 @@ paths:
                 title: light client state
                 type: object
                 properties:
-                  "@type":
+                  '@type':
                     type: string
                     description: >-
                       A URL/resource name that uniquely identifies the type of
@@ -14760,7 +14760,7 @@ paths:
                   height.
                 type: object
                 properties:
-                  "@type":
+                  '@type':
                     type: string
                     description: >-
                       A URL/resource name that uniquely identifies the type of
@@ -14831,7 +14831,7 @@ paths:
         MsgIBCSoftwareUpgrade.
       operationId: IbcCoreClientV1Msg_IBCSoftwareUpgrade
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -14853,7 +14853,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -15089,7 +15089,7 @@ paths:
                       If this field is not empty, an error will be thrown.
                     type: object
                     properties:
-                      "@type":
+                      '@type':
                         type: string
                         description: >-
                           A URL/resource name that uniquely identifies the type
@@ -15177,7 +15177,7 @@ paths:
                   the 02-client module.
                 type: object
                 properties:
-                  "@type":
+                  '@type':
                     type: string
                     description: >-
                       A URL/resource name that uniquely identifies the type of
@@ -15248,7 +15248,7 @@ paths:
       summary: RecoverClient defines a rpc handler method for MsgRecoverClient.
       operationId: IbcCoreClientV1Msg_RecoverClient
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -15270,7 +15270,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -15479,7 +15479,7 @@ paths:
         MsgSubmitMisbehaviour.
       operationId: IbcCoreClientV1Msg_SubmitMisbehaviour
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -15503,7 +15503,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -15696,7 +15696,7 @@ paths:
                 title: misbehaviour used for freezing the light client
                 type: object
                 properties:
-                  "@type":
+                  '@type':
                     type: string
                     description: >-
                       A URL/resource name that uniquely identifies the type of
@@ -15881,7 +15881,7 @@ paths:
       summary: UpdateClient defines a rpc handler method for MsgUpdateClient.
       operationId: IbcCoreClientV1Msg_UpdateClient
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -15903,7 +15903,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -16094,7 +16094,7 @@ paths:
                 title: client message to update the light client
                 type: object
                 properties:
-                  "@type":
+                  '@type':
                     type: string
                     description: >-
                       A URL/resource name that uniquely identifies the type of
@@ -16277,7 +16277,7 @@ paths:
       summary: UpdateClientParams defines a rpc handler method for MsgUpdateParams.
       operationId: IbcCoreClientV1Msg_UpdateClientParams
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -16297,7 +16297,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -16512,7 +16512,7 @@ paths:
       summary: UpgradeClient defines a rpc handler method for MsgUpgradeClient.
       operationId: IbcCoreClientV1Msg_UpgradeClient
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -16534,7 +16534,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -16720,7 +16720,7 @@ paths:
                 title: upgraded client state
                 type: object
                 properties:
-                  "@type":
+                  '@type':
                     type: string
                     description: >-
                       A URL/resource name that uniquely identifies the type of
@@ -16896,7 +16896,7 @@ paths:
                   basis of trust in update logic
                 type: object
                 properties:
-                  "@type":
+                  '@type':
                     type: string
                     description: >-
                       A URL/resource name that uniquely identifies the type of
@@ -17087,7 +17087,7 @@ paths:
       summary: ConnectionOpenAck defines a rpc handler method for MsgConnectionOpenAck.
       operationId: IbcCoreConnectionV1Msg_ConnectionOpenAck
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -17109,7 +17109,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -17314,7 +17314,7 @@ paths:
               client_state:
                 type: object
                 properties:
-                  "@type":
+                  '@type':
                     type: string
                     description: >-
                       A URL/resource name that uniquely identifies the type of
@@ -17588,7 +17588,7 @@ paths:
         MsgConnectionOpenConfirm.
       operationId: IbcCoreConnectionV1Msg_ConnectionOpenConfirm
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -17612,7 +17612,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -17855,7 +17855,7 @@ paths:
         MsgConnectionOpenInit.
       operationId: IbcCoreConnectionV1Msg_ConnectionOpenInit
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -17879,7 +17879,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -18132,7 +18132,7 @@ paths:
       summary: ConnectionOpenTry defines a rpc handler method for MsgConnectionOpenTry.
       operationId: IbcCoreConnectionV1Msg_ConnectionOpenTry
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -18154,7 +18154,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -18348,7 +18348,7 @@ paths:
               client_state:
                 type: object
                 properties:
-                  "@type":
+                  '@type':
                     type: string
                     description: >-
                       A URL/resource name that uniquely identifies the type of
@@ -18681,7 +18681,7 @@ paths:
         MsgUpdateParams.
       operationId: IbcCoreConnectionV1Msg_UpdateConnectionParams
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -18701,7 +18701,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                       description: >-
                         A URL/resource name that uniquely identifies the type of
@@ -18914,7 +18914,7 @@ paths:
     post:
       operationId: TasksTasksMsg_CreateTask
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -18937,7 +18937,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -18961,7 +18961,7 @@ paths:
     post:
       operationId: TasksTasksMsg_DeleteTask
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -18980,7 +18980,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -19004,7 +19004,7 @@ paths:
         parameters. The authority defaults to the x/gov module account.
       operationId: TasksTasksMsg_UpdateParams
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -19028,7 +19028,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -19045,7 +19045,7 @@ paths:
                   authority is the address that controls the module (defaults to
                   x/gov unless overwritten).
               params:
-                description: "NOTE: All parameters must be supplied."
+                description: 'NOTE: All parameters must be supplied.'
                 type: object
             description: MsgUpdateParams is the Msg/UpdateParams request type.
       tags:
@@ -19054,7 +19054,7 @@ paths:
     post:
       operationId: TasksTasksMsg_UpdateTask
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -19073,7 +19073,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -19101,7 +19101,7 @@ paths:
       summary: Parameters queries the parameters of the module.
       operationId: TasksTasksQuery_Params
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -19127,7 +19127,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       tags:
@@ -19136,7 +19136,7 @@ paths:
     get:
       operationId: TasksTasksQuery_TaskAll
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -19200,7 +19200,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -19261,13 +19261,10 @@ paths:
           required: false
           type: boolean
         - name: filters
-          description: Add a repeated field for task filters like title=foo
+          description: Add a repeated field for task filters
           in: query
           required: false
-          type: array
-          items:
-            type: string
-          collectionFormat: multi
+          type: string
       tags:
         - Query
   /tasks/tasks/task/{id}:
@@ -19275,7 +19272,7 @@ paths:
       summary: Queries a list of Task items.
       operationId: TasksTasksQuery_Task
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -19309,7 +19306,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    "@type":
+                    '@type':
                       type: string
                   additionalProperties: {}
       parameters:
@@ -19384,7 +19381,7 @@ definitions:
   google.protobuf.Any:
     type: object
     properties:
-      "@type":
+      '@type':
         type: string
         description: >-
           A URL/resource name that uniquely identifies the type of the
@@ -19549,7 +19546,7 @@ definitions:
         items:
           type: object
           properties:
-            "@type":
+            '@type':
               type: string
               description: >-
                 A URL/resource name that uniquely identifies the type of the
@@ -19714,7 +19711,7 @@ definitions:
       authorization:
         type: object
         properties:
-          "@type":
+          '@type':
             type: string
             description: >-
               A URL/resource name that uniquely identifies the type of the
@@ -19893,7 +19890,7 @@ definitions:
         items:
           type: object
           properties:
-            "@type":
+            '@type':
               type: string
               description: >-
                 A URL/resource name that uniquely identifies the type of the
@@ -20085,7 +20082,7 @@ definitions:
           authorization:
             type: object
             properties:
-              "@type":
+              '@type':
                 type: string
                 description: >-
                   A URL/resource name that uniquely identifies the type of the
@@ -20679,7 +20676,7 @@ definitions:
           ValidatorParams restrict the public key types validators can use.
           NOTE: uses ABCI pubkey naming, not Amino names.
       abci:
-        title: "Since: cosmos-sdk 0.50"
+        title: 'Since: cosmos-sdk 0.50'
         type: object
         properties:
           vote_extensions_enable_height:
@@ -21045,7 +21042,7 @@ definitions:
 
             NOTE: The amount field is an Int which implements the custom method
             signatures required by gogoproto.
-        title: "Since: cosmos-sdk 0.46"
+        title: 'Since: cosmos-sdk 0.46'
     description: |-
       MsgWithdrawDelegatorRewardResponse defines the Msg/WithdrawDelegatorReward
       response type.
@@ -21076,7 +21073,7 @@ definitions:
 
             NOTE: The amount field is an Int which implements the custom method
             signatures required by gogoproto.
-        title: "Since: cosmos-sdk 0.46"
+        title: 'Since: cosmos-sdk 0.46'
     description: |-
       MsgWithdrawValidatorCommissionResponse defines the
       Msg/WithdrawValidatorCommission response type.
@@ -21112,7 +21109,7 @@ definitions:
         description: evidence defines the evidence of misbehavior.
         type: object
         properties:
-          "@type":
+          '@type':
             type: string
             description: >-
               A URL/resource name that uniquely identifies the type of the
@@ -21193,7 +21190,7 @@ definitions:
         description: allowance can be any of basic, periodic, allowed fee allowance.
         type: object
         properties:
-          "@type":
+          '@type':
             type: string
             description: >-
               A URL/resource name that uniquely identifies the type of the
@@ -21363,7 +21360,7 @@ definitions:
         description: content is the proposal's content.
         type: object
         properties:
-          "@type":
+          '@type':
             type: string
             description: >-
               A URL/resource name that uniquely identifies the type of the
@@ -21437,7 +21434,7 @@ definitions:
         items:
           type: object
           properties:
-            "@type":
+            '@type':
               type: string
               description: >-
                 A URL/resource name that uniquely identifies the type of the
@@ -21628,11 +21625,11 @@ definitions:
           Since: cosmos-sdk 0.47
       summary:
         type: string
-        description: "Since: cosmos-sdk 0.47"
+        description: 'Since: cosmos-sdk 0.47'
         title: summary is the summary of the proposal
       expedited:
         type: boolean
-        description: "Since: cosmos-sdk 0.50"
+        description: 'Since: cosmos-sdk 0.50'
         title: expedited defines if the proposal is expedited or not
     description: >-
       MsgSubmitProposal defines an sdk.Msg type that supports submitting
@@ -22057,7 +22054,7 @@ definitions:
         description: content is the proposal's content.
         type: object
         properties:
-          "@type":
+          '@type':
             type: string
             description: >-
               A URL/resource name that uniquely identifies the type of the
@@ -22553,13 +22550,13 @@ definitions:
         type: string
         format: int64
         description: creation_height is the height which the unbonding took place.
-    description: "Since: cosmos-sdk 0.46"
+    description: 'Since: cosmos-sdk 0.46'
     title: >-
       MsgCancelUnbondingDelegation defines the SDK message for performing a
       cancel unbonding delegation for delegator
   cosmos.staking.v1beta1.MsgCancelUnbondingDelegationResponse:
     type: object
-    description: "Since: cosmos-sdk 0.46"
+    description: 'Since: cosmos-sdk 0.46'
     title: MsgCancelUnbondingDelegationResponse
   cosmos.staking.v1beta1.MsgCreateValidator:
     type: object
@@ -22623,7 +22620,7 @@ definitions:
       pubkey:
         type: object
         properties:
-          "@type":
+          '@type':
             type: string
             description: >-
               A URL/resource name that uniquely identifies the type of the
@@ -24862,7 +24859,7 @@ definitions:
           If this field is not empty, an error will be thrown.
         type: object
         properties:
-          "@type":
+          '@type':
             type: string
             description: >-
               A URL/resource name that uniquely identifies the type of the
@@ -24925,7 +24922,7 @@ definitions:
         title: light client state
         type: object
         properties:
-          "@type":
+          '@type':
             type: string
             description: >-
               A URL/resource name that uniquely identifies the type of the
@@ -25087,7 +25084,7 @@ definitions:
           height.
         type: object
         properties:
-          "@type":
+          '@type':
             type: string
             description: >-
               A URL/resource name that uniquely identifies the type of the
@@ -25206,7 +25203,7 @@ definitions:
               If this field is not empty, an error will be thrown.
             type: object
             properties:
-              "@type":
+              '@type':
                 type: string
                 description: >-
                   A URL/resource name that uniquely identifies the type of the
@@ -25291,7 +25288,7 @@ definitions:
           the 02-client module.
         type: object
         properties:
-          "@type":
+          '@type':
             type: string
             description: >-
               A URL/resource name that uniquely identifies the type of the
@@ -25389,7 +25386,7 @@ definitions:
         title: misbehaviour used for freezing the light client
         type: object
         properties:
-          "@type":
+          '@type':
             type: string
             description: >-
               A URL/resource name that uniquely identifies the type of the
@@ -25567,7 +25564,7 @@ definitions:
         title: client message to update the light client
         type: object
         properties:
-          "@type":
+          '@type':
             type: string
             description: >-
               A URL/resource name that uniquely identifies the type of the
@@ -25772,7 +25769,7 @@ definitions:
         title: upgraded client state
         type: object
         properties:
-          "@type":
+          '@type':
             type: string
             description: >-
               A URL/resource name that uniquely identifies the type of the
@@ -25936,7 +25933,7 @@ definitions:
           basis of trust in update logic
         type: object
         properties:
-          "@type":
+          '@type':
             type: string
             description: >-
               A URL/resource name that uniquely identifies the type of the
@@ -26197,7 +26194,7 @@ definitions:
       client_state:
         type: object
         properties:
-          "@type":
+          '@type':
             type: string
             description: >-
               A URL/resource name that uniquely identifies the type of the
@@ -26587,7 +26584,7 @@ definitions:
       client_state:
         type: object
         properties:
-          "@type":
+          '@type':
             type: string
             description: >-
               A URL/resource name that uniquely identifies the type of the
@@ -26991,7 +26988,7 @@ definitions:
           authority is the address that controls the module (defaults to x/gov
           unless overwritten).
       params:
-        description: "NOTE: All parameters must be supplied."
+        description: 'NOTE: All parameters must be supplied.'
         type: object
     description: MsgUpdateParams is the Msg/UpdateParams request type.
   tasks.tasks.MsgUpdateParamsResponse:
