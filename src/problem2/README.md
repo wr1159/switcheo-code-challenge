@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fancy Form
+
+Deployed onto [https://switcheo-code-challenge-wr1159.vercel.app/](https://switcheo-code-challenge-wr1159.vercel.app/)
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). Other libraries used include TailwindCSS, shadcn/ui, Vercel, next-themes.
+
+The app fetches live data from provided link of [https://interview.switcheo.com/prices.json](https://interview.switcheo.com/prices.json) and fetches the images from the github repo [https://github.com/Switcheo/token-icons/tree/main/tokens](https://github.com/Switcheo/token-icons/tree/main/tokens). The app uses a responsive design and will behave smoothly for all screen width.
+
+
 
 ## Getting Started
 
